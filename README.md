@@ -5,6 +5,7 @@ A running geth node, which is allowed to connect by jsonrpc
 ### Usage
 - modify web3 HttpProvider host and port as you geth node
 - npm install
+- unlock coinbase in geth console
 - ```./app.js```
 
 If use in private chain, you can use ```miner.start()``` in geth console to confirm contract deploy transaction.  
