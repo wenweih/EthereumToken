@@ -32,14 +32,10 @@ var deploy_callback = function(e, contract){
       console.log("Contract transactionhash:" + contract.transactionHash + " wait to be minded");
     }else {
       console.log("contract minded, address: " + contract.address);
-      //contract.issue.sendTransaction(coinbase, 500, {from: coinbase}, function(){
-        //console.log("issue 500");
-      //});
-      //
       fs.appendFileSync(abi_file, "var tokenAbi = " + JSON.stringify(contract.abi) + ";\r\n");
       fs.appendFileSync(abi_file, "var contract_address = \"" + contract.address + "\";\r\n");
     }
   }
 };
 
-var token = token_contract.new(100000, "hwwCoin", 1000, "hww", initializer, deploy_callback);
+var token = token_contract.new(10000000000000000000000, "hwwCoin", 1000, "hww", initializer, deploy_callback);
